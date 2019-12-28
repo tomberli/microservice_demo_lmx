@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="microservice-lmx-02-product-resource" />
+        <module name="microservice-lmx-09-provider-product-hystrix-8001" />
+        <module name="microservice-lmx-06-eureka-6002" />
+        <module name="microservice-lmx-11-zuul-gateway-7001" />
+        <module name="microservice-lmx-08-consumer-product-feign-80" />
+        <module name="microservice-lmx-10-hystrix-dashboard-9001" />
+        <module name="microservice-lmx-07-provider-product-8002" />
+        <module name="microservice-lmx-04-consumer-product-80" />
+        <module name="microservice-lmx-03-provider-product-8001" />
+        <module name="microservice-lmx-05-eureka-6001" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microservice-lmx-01-parent" target="1.8" />
+      <module name="microservice-lmx-02-product-resource" target="1.8" />
+      <module name="microservice-lmx-03-provider-product-8001" target="1.8" />
+      <module name="microservice-lmx-04-consumer-product-80" target="1.8" />
+      <module name="microservice-lmx-05-eureka-6001" target="1.8" />
+      <module name="microservice-lmx-06-eureka-6002" target="1.8" />
+      <module name="microservice-lmx-07-provider-product-8002" target="1.8" />
+      <module name="microservice-lmx-08-consumer-product-feign-80" target="1.8" />
+      <module name="microservice-lmx-09-provider-product-hystrix-8001" target="1.8" />
+      <module name="microservice-lmx-10-hystrix-dashboard-9001" target="1.8" />
+      <module name="microservice-lmx-11-zuul-gateway-7001" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="microservice-lmx-02-product-resource" options="-parameters" />
+      <module name="microservice-lmx-03-provider-product-8001" options="-parameters" />
+      <module name="microservice-lmx-04-consumer-product-80" options="-parameters" />
+      <module name="microservice-lmx-05-eureka-6001" options="-parameters" />
+      <module name="microservice-lmx-06-eureka-6002" options="-parameters" />
+      <module name="microservice-lmx-07-provider-product-8002" options="-parameters" />
+      <module name="microservice-lmx-08-consumer-product-feign-80" options="-parameters" />
+      <module name="microservice-lmx-09-provider-product-hystrix-8001" options="-parameters" />
+      <module name="microservice-lmx-10-hystrix-dashboard-9001" options="-parameters" />
+      <module name="microservice-lmx-11-zuul-gateway-7001" options="-parameters" />
+    </option>
+  </component>
+</project>

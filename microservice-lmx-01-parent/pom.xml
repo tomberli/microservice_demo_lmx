@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lmx.microservice</groupId>
+    <artifactId>microservice-lmx-01-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../microservice-lmx-02-product-resource</module>
+        <module>../microservice-lmx-03-provider-product-8001</module>
+        <module>../microservice-lmx-04-consumer-product-80</module>
+        <module>../microservice-lmx-05-eureka-6001</module>
+        <module>../microservice-lmx-06-eureka-6002</module>
+        <module>../microservice-lmx-07-provider-product-8002</module>
+        <module>../microservice-lmx-08-consumer-product-feign-80</module>
+        <module>../microservice-lmx-09-provider-product-hystrix-8001</module>
+        <module>../microservice-lmx-10-hystrix-dashboard-9001</module>
+        <module>../microservice-lmx-11-zuul-gateway-7001</module>
+    </modules>
+    <packaging>pom</packaging>
+
+
+
+    <!-- spring boot 采用 2.0.7 版本 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <!-- 定义参数 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- spring cloud 采用 Finchley.SR2 版本 -->
+        <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+    </properties>
+
+    <!--特别注意：对于dependencyManagement标签，只是声明了依赖，并没有引入，
+       所以子项目继承了父项目，还是要引入该依赖。
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <!--这就是前面properties声明的标签 用$符号引用-->
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <!--maven不支持多继承，使用import来依赖管理配置-->
+                <scope>import</scope>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+            <!--druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.12</version>
+            </dependency>
+            <!--mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.13</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
